@@ -1,0 +1,50 @@
+14.3.15 Find the first partial derivatives of the function $$f(x,y)=x^4 + 5xy^3$$
+
+from sympy import symbols, diff
+x,y = symbols('x,y')
+def f(x,y):
+  return x**4 + 5*(x)*(y**3)
+diff(f(x,y), x, 1)
+
+
+from sympy import symbols, diff
+x,y = symbols('x,y')
+def f(x,y):
+  return x**4 + 5*(x)*(y**3)
+diff(f(x,y), x, 2)
+
+from sympy import symbols, diff
+x,y = symbols('x,y')
+def f(x,y):
+  return x**4 + 5*(x)*(y**3)
+diff(f(x,y), y, 1)
+
+from sympy import symbols, diff
+x,y = symbols('x,y')
+def f(x,y):
+  return x**4 + 5*(x)*(y**3)
+diff(f(x,y), y, 2)
+
+14.3.11
+If $$f(x,y) = 16 - 4x^2 - y^2$$, find $$f_x(1,2) and f_y(1,2)$$ and interpret these numbers as slopes.
+
+
+def approximate_f_x(f, a, b):
+  delta_x = 0.00005
+  return (f(a + delta_x,b) - f(a,b))/delta_x
+
+def f(x,y):
+  return 16 - 4*x**2 - y**2
+approximate_f_x(f,1,2)
+
+  
+
+def approximate_f_y(f, a, b):
+  delta_y = 0.00005
+  return (f(a, b + delta_y) - f(a,b))/delta_y
+
+def f(x,y):
+  return 16 - 4*x**2 - y**2
+approximate_f_y(f,1,2)
+
+Interpretation: -8 is the slope of the tangent line in the x direction of the function as y is held a constant 2. -4 is the slope of the tangent line the y direction of the function as x is held a constant 1.
